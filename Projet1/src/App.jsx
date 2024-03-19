@@ -1,4 +1,7 @@
+import React from 'react';
+import { useState } from 'react';
 import Gallery from './Components/Gallery.jsx';
+import Search from './Components/Search.jsx';
 import './App.css'
 
 function App() {
@@ -85,8 +88,12 @@ function App() {
       download_url: "https://picsum.photos/id/29/4000/2670"
     }
   ]
+  const [filteredPhotos, setFilteredPhotos] = useState(tableau);
   return(
-    <Gallery photos={tableau}/>
+    <div>
+      <Search photos={tableau} setFilteredPhotos={setFilteredPhotos} />
+      <Gallery photos={filteredPhotos}/>
+    </div>
   )
 }
 
