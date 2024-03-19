@@ -5,7 +5,6 @@ import React from 'react';
 const Search = ({photos, setFilteredPhotos}) => {
     const [searchTerm, setSearchTerm] = useState('');
     const handleChange = (event) => {
-        console.log(photos);
             setSearchTerm(event.target.value);
             const filtered = photos.filter(photo => photo.author.toLowerCase().includes(event.target.value.toLowerCase()));
             setFilteredPhotos(filtered);

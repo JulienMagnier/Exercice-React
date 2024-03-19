@@ -89,10 +89,13 @@ function App() {
     }
   ]
   const [filteredPhotos, setFilteredPhotos] = useState(tableau);
+  const [showId, setShowId] = useState(true);
+
   return(
     <div>
       <Search photos={tableau} setFilteredPhotos={setFilteredPhotos} />
-      <Gallery photos={filteredPhotos}/>
+      <input type="checkbox" checked={showId} onChange={() => setShowId(!showId)} /> Show Photo ID
+      <Gallery photos={filteredPhotos} showId={showId}/>
     </div>
   )
 }

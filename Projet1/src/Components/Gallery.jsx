@@ -1,11 +1,11 @@
 import React from 'react';
 import Photo from './Photo';
 
-const Gallery = ({ photos }) => {
+const Gallery = ({ photos, showId }) => {
     return (
         <div>
             {photos.map(photo => (
-                <Photo key={photo.id} photo={photo} />
+                <Photo key={photo.id} photo={photo} showId={showId}/>
             ))}
         </div>
     )
